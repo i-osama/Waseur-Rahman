@@ -1,0 +1,102 @@
+================================================================================
+TEXTILE ENGINEER PORTFOLIO - IMAGE GUIDE & SPECIFICATIONS
+Waseur Rahman — Textile Engineer & Public Speaker
+================================================================================
+
+Welcome! This website is engineered with a robust "Placeholder-First" architecture.
+Every image slot automatically displays a clean, styled CSS placeholder
+(with a textile-themed icon and recommended aspect ratio tag) if an image
+path is empty or missing, ensuring the layout never breaks or shifts.
+
+--------------------------------------------------------------------------------
+1. CURRENT IMAGE SPECIFICATIONS & FOLDER STRUCTURE
+--------------------------------------------------------------------------------
+
+1. PROFILE PHOTO:
+   - Target File Path : assets/images/profile/profile.jpg
+   - Aspect Ratio     : 1:1 (Square)
+   - Current Asset    : Professional portrait / headshot of Waseur Rahman
+   - Recommended Size : 400 x 400 px (or 500 x 500 px)
+   - File Types       : .jpg, .png, or .webp
+
+2. ABOUT ME PHOTO:
+   - Target File Path : assets/images/profile/about.jpg
+   - Aspect Ratio     : 4:3 (Landscape) or 3:4 (Framed with object-fit: cover)
+   - Current Asset    : Industrial fieldwork photo at Ha-Meem Group entrance
+   - Recommended Size : 500 x 375 px (or 800 x 600 px)
+   - File Types       : .jpg, .png, or .webp
+
+3. HERO BACKGROUND / FEATURE PHOTO:
+   - Target File Path : assets/images/hero/hero.jpg
+   - Aspect Ratio     : Wide (Framed with object-position: center 18%)
+   - Current Asset    : Waseur Rahman in formal suit holding BUFT Industrial Report
+   - Recommended Size : 1920 x 800 px (or 1536 x 2048 px portrait)
+   - File Types       : .jpg, .png, or .webp
+
+4. PROJECT CARDS (6 Projects in script.js):
+   - Current Installed Assets:
+       assets/images/projects/project-1.jpg  (Garment Sewing Line Inspection, Ha-Meem Group)
+       assets/images/projects/project-2.jpg  (DTG Textile Machinery Expo - Ring frame rollers)
+       assets/images/projects/project-3.jpg  (BUFT Apparel Arena 2026 Champions Check & Crests)
+       assets/images/projects/project-4.jpg  (IGNITE Champions Team Presentation Check)
+       assets/images/projects/project-5.jpg  (Reserved for future project / research)
+       assets/images/projects/project-6.jpg  (Reserved for future lab / CCM research)
+   - Aspect Ratio     : 16:9 (Standard Widescreen Card)
+   - Recommended Size : 600 x 340 px (or 1280 x 720 px)
+   - File Types       : .jpg, .png, or .webp
+
+5. GALLERY ITEMS (Grid & Lightbox):
+   - Additional Hero & Milestones Assets:
+       assets/images/hero/hero-award.jpg        (BUFT International MUN Crest Award)
+       assets/images/hero/rahmat-group-visit.jpg (Industrial Field Visit at Rahmat Group)
+       assets/images/hero/speaking-award.jpg    (Winner Trophy & Certificate, SEU Lit Fest)
+   - All 9 assets are pre-wired into the interactive gallery and lightbox in script.js.
+
+--------------------------------------------------------------------------------
+2. HOW TO ADD OR REPLACE IMAGES (STEP-BY-STEP)
+--------------------------------------------------------------------------------
+
+Step A: Copy your image file into the corresponding folder:
+        Example: Place your new photo as "project-5.jpg" inside:
+        assets/images/projects/project-5.jpg
+
+Step B: Open "script.js" in any text editor (VS Code, Notepad, etc.).
+
+Step C: Locate the `IMAGES` configuration object right at the top of the file:
+
+        const IMAGES = {
+          profile: {
+            src: "assets/images/profile/profile.jpg",
+            alt: "Profile photo of Waseur Rahman"
+          },
+          ...
+          projects: [
+            ...
+            {
+              src: "assets/images/projects/project-5.jpg", // <-- Set your path here!
+              alt: "Sustainable denim and gaseous ozone washing trial",
+              ...
+            }
+          ]
+        };
+
+Step D: Save `script.js` and refresh your browser!
+        - If `src` has a valid path, the website displays your real image with
+          a smooth fade-in and lazy loading.
+        - If `src` is empty (""), the website continues showing the elegant
+          CSS placeholder.
+
+--------------------------------------------------------------------------------
+3. HELPFUL TIPS FOR BEST PERFORMANCE
+--------------------------------------------------------------------------------
+
+- Compression: Use free tools like https://squoosh.app or https://tinypng.com
+  to compress photos before adding them. Aim for under 300KB per project image
+  and under 500KB for hero banners.
+- Aspect Ratio Locking: The website enforces CSS `object-fit: cover`. This
+  means your images will never stretch, distort, or disrupt the grid layout,
+  even if your uploaded photo has a slightly different ratio.
+- Adding More Gallery Items: You can append as many objects as you like to the
+  `gallery: [...]` array in `script.js`. The grid and lightbox will automatically
+  adapt!
+================================================================================
